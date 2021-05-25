@@ -1,0 +1,16 @@
+<div class="container">
+  </div><% if (data_list.length) {%>
+    <% data_list.forEach(item => { %>
+      <div class="">
+        <div class="media-body">
+            <div class="media tm-notification-item">                                    
+                  <div class="media-body">
+                      <span class="tm-small tm-text-color-secondary"><b><%= item.name %></span>
+                      <p class="mb-2"><b><%= item.name %> </p>
+                      <span class="tm-small tm-text-color-secondary"><%= item.address %></span>
+                  </div>
+            </div>           
+      </div>
+  <% }) %>
+  <% } %>
+</div>

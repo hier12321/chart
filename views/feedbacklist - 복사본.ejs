@@ -1,0 +1,25 @@
+  <div class="tm-notification-items">
+    <div class="media-body">
+        <div class="media tm-notification-item">                                    
+            <div class="media-body">
+              <table class="table table-striped">
+                <% if (data_list.length) {%>
+                <tbody>
+                  <% data_list.forEach(item => { %>
+                  <tr>
+                    <td><%= item.name %></td>
+                    <td>목표 금액 : <%= item.address %></td>
+                  </tr>
+                  <% }) %>
+                </tbody>
+                <% } %>
+                <tbody>
+                  <button type="submit" class="tm-gray-circle btn-block text-uppercase"> 등록하기 </button>   
+                </tbody>
+              </table>
+
+                
+            </div>
+                                        
+        </div>         
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+  </div><% if (data_list.length) {%>
+    <% data_list.forEach(item => { %>
+      <div class="">
+        <div class="media-body">
+            <div class="media tm-notification-item">                                    
+                  <div class="media-body">
+                      <span class="tm-small tm-text-color-secondary">홍길동</span>
+                      <p class="mb-2"><b><%= item.name %> </p>
+                      <span class="tm-small tm-text-color-secondary">목표 금액 : <%= item.address %></span>
+                  </div>
+                  <button id="submit" type="submit" class="text-center text-white tm-gray-circle btn-block text-uppercase"> 등록하기 </button>                               
+        </div>           
+      </div>
+  <% }) %>
+  <% } %>
+</div>
+
+<script>
+  $(document).ready(function() {
+    let interval; 
+
+    $("#submit").on("click", function() {
+      alert("등록되었습니다. ")
+    });
+
+   
+  });
+</script> 

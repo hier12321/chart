@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Admin - Dashboard HTML Template</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    <!-- https://fonts.google.com/specimen/Roboto -->
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="assets/css/templatemo-style.css">
+    <!--
+	Product Admin CSS Template
+	https://templatemo.com/tm-524-product-admin
+	-->
+</head>
+
+<body id="reportsPage">
+    <div class="" id="home">
+        <nav class="navbar navbar-expand-xl">
+            <div class="container h-100">
+                <a class="navbar-brand" href="/">
+                    <h1 class="tm-site-title mb-0">ACCOUNT MANAGEMENT</h1>
+                </a>
+                <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars tm-nav-icon"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto h-100">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">
+                                <i class="fas fa-home"></i>
+                                HOME
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#acounthistory">
+                                <i class="fas fa-clipboard-list"></i>
+                                입출금내역
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#reports">
+                                <i class="fas fa-tachometer-alt"></i>
+                                통계보기
+                            </a>
+                        </li> 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span>
+                                    포인트 <i class="fas fa-angle-down "></i>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/point">포인트 사용하기</a>
+                                <a class="dropdown-item" href="/point#test">상품권 교환 내역</a>
+                                <a class="dropdown-item" href="/point">포인트 내역</a>
+                            </div>
+                        </li>                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accounts">
+                                <i class="far fa-user"></i>
+                                개인정보
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link d-block" href="/login">
+                                Admin, <b>Logout</b>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="text-white mt-5 mb-5">Welcome back, <b>Admin</b></p>
+                </div>
+            </div>
+            <!-- row -->
+            <div class="row tm-content-row">
+                <!-- acnt insert start -->
+                <div class="col-12 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-settings">
+                    <h2 class="tm-block-title">내역 입력</h2>
+                    <form action="" class="tm-signup-form row">
+                        <div class="form-group col-lg-3">
+                            <label for="name">일자</label>
+                            <input id="name" name="name" type="date" class="form-control validate" data-large-mode="true"/>
+                        </div>
+                        <div class="form-group col-lg-3">
+                            <label for="email">항목</label>
+                            <input id="email" name="email" type="text" class="form-control validate" />
+                        </div>
+                        <div class="form-group col-lg-3">
+                            <label for="amount">금액</label>
+                            <input id="amount" name="amount" type="number" class="form-control validate"/>
+                        </div>
+                        <div class="form-group col-lg-3">
+                            <label for="password2">비고</label>
+                            <input id="password2" name="password2" type="password" class="form-control validate"/>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block text-uppercase">
+                                등록하기
+                        </button>
+                        </div>
+                    </form>
+                    </div>
+                 </div>
+                <!-- acnt insert end -->
+                <!-- acnt search start -->
+                
+                <!-- acnt search end -->
+                <!-- acnt table start -->
+                <div class="col-12 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
+                        <h2 class="tm-block-title">입출금 내역</h2>
+                        <div class="col-12 ">
+                            <div class="tm-bg-primary-dark col-12">                    
+                            <form action="" class="tm-signup-form row">
+                                <div class="form-group col-lg-3">
+                                    <label for="name">일자</label>
+                                    <input id="name" name="name" type="date" class="form-control validate" data-large-mode="true"/>
+                                </div>
+                                <div class="form-group col-lg-4">
+                                    <label for="address">항목</label>
+                                    <input id="address" name="address" type="text" class="form-control validate" />
+                                </div>
+                                <div class="form-group col-lg-3">
+                                    <label for="password">금액</label>
+                                    <input id="password" name="password" type="number" class="form-control validate"/>
+                                </div>
+                                <div class="ccol-lg-4">
+                                    <label > 　</label>
+                                    <button type="submit" onclick="location.href='/deletelist'" class="btn btn-primary btn-block text-uppercase">
+                                        검색하기
+                                </button>
+                                </div>
+                            </form>
+                            </div>
+                         </div>
+                        <div id="place_for_tableplace"></div>
+                    </div>
+                </div>
+                <!-- acnt table end -->
+                
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller">
+                        <h2 class="tm-block-title">내역 통계</h2>
+                        <div id="pieChartContainer">
+                            <canvas id="pieChart" class="chartjs-render-monitor" width="200" height="200"></canvas>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block">
+                        <h2 class="tm-block-title">항목별 통계</h2>
+                        <canvas id="barChart"></canvas>
+                    </div>
+                </div>
+                <!-- 목표 insert start -->
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-settings">
+                    <!-- <h2 class="tm-site-title mb-0">홍길동 자산관리사</h2> -->
+                    <form action="" class="tm-signup-form row">
+                        <div class="form-group col-lg-3">
+                            <label for="name">목표금액</label>
+                            <input id="name" name="name" type="text" class="form-control validate" disabled="true"/>
+                        </div>
+                        <div class="form-group col-lg-3">
+                            <label for="email">잔액(달성율)</label>
+                            <input id="email" name="email" type="email" class="form-control validate" disabled="true" />
+                        </div>
+                        <div class="form-group col-lg-3">
+                            <label for="password">종료일자</label>
+                            <input id="password" name="password" type="password" class="form-control validate" disabled="true"/>
+                        </div>
+                        <div class="form-group col-lg-3">
+                            <label for="password2">D-day</label>
+                            <input id="password2" name="password2" type="password" class="form-control validate" disabled="true"/>
+                        </div>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary btn-block text-uppercase">
+                                피드백 작성하기
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary btn-block text-uppercase">
+                                매칭 취소하기
+                            </button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                <!-- acnt insert end -->
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-overflow">
+                        <h2 class="tm-block-title">피드백 내역</h2>
+                        <div class="tm-notification-items">
+                            <div class="media-body">
+                                <div class="media tm-notification-item">                                    
+                                    <div class="media-body">
+                                        <span class="tm-small tm-text-color-secondary">홍길동</span>
+                                        <p class="mb-2"><b>기간동안 식비 지출이 많으므로</b> 식비 지출 관리가 필요합니다.  <b>지출관리 시 10%의 효과</b> 를 예상하며 <a href="#"
+                                                class="tm-notification-link">아래와 같이 목표</a>. 를 제안합니다. </p>
+                                        <span class="tm-small tm-text-color-secondary">목표 금액 : 750,000(수입의 40%)</span>
+                                    </div>
+                                    <button type="submit" class="tm-gray-circle btn-block text-uppercase"> 등록하기 </button>                               
+                                </div> 
+                                <div class="media tm-notification-item">                                    
+                                    <div class="media-body">
+                                        <span class="tm-small tm-text-color-secondary">홍길동</span>
+                                        <p class="mb-2"><b>기간동안 식비 지출이 많으므로</b> 식비 지출 관리가 필요합니다.  <b>지출관리 시 10%의 효과</b> 를 예상하며 <a href="#"
+                                                class="tm-notification-link">아래와 같이 목표</a>. 를 제안합니다. </p>
+                                        <span class="tm-small tm-text-color-secondary">목표 금액 : 750,000(수입의 40%)</span>
+                                    </div>
+                                    <button type="submit" class="tm-gray-circle btn-block text-uppercase"> 등록하기 </button>                               
+                                </div> 
+                                <div class="media tm-notification-item">
+                                    
+                                    <div class="media-body">
+                                        <span class="tm-small tm-text-color-secondary">홍길동</span>
+                                        <p class="mb-2"><b>기간동안 식비 지출이 많으므로</b> 식비 지출 관리가 필요합니다.  <b>지출관리 시 10%의 효과</b> 를 예상하며 <a href="#"
+                                                class="tm-notification-link">아래와 같이 목표</a>. 를 제안합니다. </p>
+                                        <span class="tm-small tm-text-color-secondary">목표 금액 : 750,000(수입의 40%)</span>
+                                    </div>
+                                    <button type="submit" class="tm-gray-circle btn-block text-uppercase"> 등록하기 </button>                               
+                                </div>         
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <footer class="tm-footer col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+            <div class="col-12 font-weight-light">
+                <p class="text-center text-white mb-0 px-4 small">
+                    Copyright &copy; <b>2021</b> All rights reserved. 
+                    
+                    Design: <a rel="nofollow noopener" href="https://templatemo.com" class="tm-footer-link">Ann</a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+    <!-- https://jquery.com/download/ -->
+    <script src="assets/js/moment.min.js"></script>
+    <!-- https://momentjs.com/ -->
+    <script src="assets/js/Chart.min.js"></script>
+    <!-- http://www.chartjs.org/docs/latest/ -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- https://getbootstrap.com/ -->
+    <script src="assets/js/tooplate-scripts.js"></script>
+    <script>
+        Chart.defaults.global.defaultFontColor = 'white';
+        let ctxLine,
+            ctxBar,
+            ctxPie,
+            optionsLine,
+            optionsBar,
+            optionsPie,
+            configLine,
+            configBar,
+            configPie,
+            lineChart;
+        barChart, pieChart;
+        // DOM is ready
+        $(function () {
+            drawLineChart(); // Line Chart
+            drawBarChart(); // Bar Chart
+            drawPieChart(); // Pie Chart
+
+            $(window).resize(function () {
+                updateLineChart();
+                updateBarChart();                
+            });
+        })
+    </script>
+     <!-- <script>
+        $(function(){
+            var target = $('#tableplace');
+            $.getJSON('json_data.json', function(members){
+                $.each(members, function(i, member){
+                    var add_data = '';
+                    add_data += '<tr>';
+        
+                    add_data += '<td>';
+                    add_data += member.hp;
+                    add_data += '</td>';
+        
+                    add_data += '<td>';
+                    add_data += member.name;
+                    add_data += '</td>';
+        
+                    add_data += '<td>';
+                    add_data += member.address;
+                    add_data += '</td>';
+        
+                    add_data += '</tr>';
+                    target.append(add_data);
+                });
+            });
+        });
+        
+        </script> -->
+        <script>
+            $(document).ready(function() {
+              let interval;
+      
+              function doAjax() {
+                $.ajax({
+                  url: "http://localhost:3000/updatelist",
+                  type: "get",
+                  success: function(response) {
+                    $("#place_for_tableplace").html(response);
+                    interval = setTimeout(doAjax, 3000);
+                  },
+                  error: function(xhr) {
+                    //Do Something to handle error
+                  }
+                });
+              }
+              doAjax();
+              $("#start").on("click", function() {
+                console.log("start");
+                doAjax();
+              });
+      
+              $("#stop").on("click", function() {
+                console.log("stop");
+                clearTimeout(interval);
+              });
+            });
+          </script>
+</body>
+
+</html>

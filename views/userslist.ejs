@@ -1,0 +1,41 @@
+<div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td><b>일자</b></td>
+          <td><b>통계기간</b></td>
+          <td><b>수익</b></td>
+          <td><b>잔액비율</b></td>
+          <td><b>시작일</b></td>
+          <td><b>기간</b></td>
+        </tr>
+      </thead>
+      <% if (data_list.length) {%>
+      <tbody>
+        <% data_list.forEach(item => { %>
+        <tr>
+          <td id="user"><%= item.name %></td>
+          <td><%= item.address %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+      <% } %>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      let interval; 
+
+      $("#user").on("click", function() {
+        window.location.href = "#reports";      
+      });
+
+      $("#stop").on("click", function() {
+        console.log("stop");
+        clearTimeout(interval);
+      });
+    });
+  </script> 
+  

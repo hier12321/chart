@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    
+  </head>
+  <body>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td><b>이름</b></td>
+            <td><b>목표기간</b></td>
+            <td><b>수익</b></td>
+            <td><b>목표</b></td>
+            <td><b>D-Day</b></td>
+            <td><b>최종 피드백 일자</b></td>
+            <td><b>목표진행여부</b></td>
+            <td><b>목표달성결과</b></td>
+          </tr>
+        </thead>
+        <% if (data_list.length) {%>
+        <tbody >
+          <% data_list.forEach(item => { %>
+          <tr >
+            <td id="client"><%= item.name %></td>
+            <td><%= item.address %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+        <% } %>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        let interval; 
+
+        $("#client").on("click", function() {
+          window.location.href = "#reports";      
+        });
+
+        $("#stop").on("click", function() {
+          console.log("stop");
+          clearTimeout(interval);
+        });
+      });
+    </script>
+  </body>    
+</html>
+  
