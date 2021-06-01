@@ -94,27 +94,27 @@
             <div class="row tm-content-row">
                 <!-- acnt insert start -->
                 <div class="col-12 tm-block-col">
-                    <div class="tm-bg-primary-dark tm-block  tm-block-settings">
+                    <div class="tm-bg-primary-dark tm-block  tm-block-settings" id="accountHistoryInput">
                     <h2 class="tm-block-title">내역 입력</h2>
-                    <form action="" class="tm-signup-form row">
+                    <form action="/acntHistoryInput" class="tm-signup-form row" method="POST">
                         <div class="form-group col-lg-3">
-                            <label for="name">일자</label>
-                            <input id="name" name="name" type="date" class="form-control validate" data-large-mode="true"/>
+                            <label for="putAcntDate">일자</label>
+                            <input id="putAcntDate" name="putAcntDate" type="date" class="form-control validate" data-large-mode="true"/>
                         </div>
                         <div class="form-group col-lg-3">
-                            <label for="email">항목</label>
-                            <input id="email" name="email" type="text" class="form-control validate" />
+                            <label for="putAcntItem">항목</label>
+                            <input id="putAcntItem" name="putAcntItem" type="text" class="form-control validate" />
                         </div>
                         <div class="form-group col-lg-3">
-                            <label for="amount">금액</label>
-                            <input id="amount" name="amount" type="number" class="form-control validate"/>
+                            <label for="putAcntAmount">금액</label>
+                            <input id="putAcntAmount" name="putAcntAmount" type="number" class="form-control validate"/>
                         </div>
                         <div class="form-group col-lg-3">
-                            <label for="password2">비고</label>
-                            <input id="password2" name="password2" type="password" class="form-control validate"/>
+                            <label for="putAcntEtc">비고</label>
+                            <input id="putAcntEtc" name="putAcntEtc" type="text" class="form-control validate"/>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block text-uppercase">
+                            <button id="putAcntSubmit" name="putAcntSubmit" type="submit" class="btn btn-primary btn-block text-uppercase">
                                 등록하기
                         </button>
                         </div>
@@ -124,16 +124,16 @@
                 <!-- acnt insert end -->
                 <!-- match req start -->
                 <div class="col-12 tm-block-col">
-                    <div class="tm-bg-primary-dark tm-block  tm-block-settings">
+                    <div class="tm-bg-primary-dark tm-block  tm-block-settings" >
                     <h2 class="tm-block-title">매칭 신청</h2>
-                    <form action="" class="tm-signup-form row">
+                    <form action="/matchReq" class="tm-signup-form row" method="POST">
                         <div class="form-group col-lg-4">
-                            <label for="name">시작일자</label>
-                            <input id="name" name="name" type="date" class="form-control validate" data-large-mode="true"/>
+                            <label for="putGsDate">시작일자</label>
+                            <input id="putGsDate" name="putGsDate" type="date" class="form-control validate" data-large-mode="true"/>
                         </div>
                         <div class="form-group col-lg-4">
-                            <label for="email">기간</label>
-                            <select class="custom-select">
+                            <label for="putGTerm">기간</label>
+                            <select class="custom-select" id="putGTerm" name="gTerm">
                                 <option value="0">2주</option>
                                 <option value="1">3주</option>
                                 <option value="2">1개월</option>
@@ -142,9 +142,9 @@
                               </select>
                         </div>
                         <div class="col-4">
-                            <label for="email">　</label>
-                            <button type="submit" class="btn btn-primary btn-block text-uppercase">
-                                등록하기
+                            <label for="putGSubmit">　</label>
+                            <button id="putGSubmit" name="putGSubmit" type="submit" class="btn btn-primary btn-block text-uppercase">
+                                신청하기
                         </button>
                         </div>
                     </form>
@@ -157,24 +157,24 @@
                         <h2 class="tm-block-title">입출금 내역</h2>
                         <div class="col-12 ">
                             <div class="tm-bg-primary-dark col-12">                    
-                            <form action="/deleteone" class="tm-signup-form row">
+                            <form action="" class="tm-signup-form row" method="">
                                 <div class="form-group col-lg-3.5">
-                                    <label for="name">일자</label>
-                                    <input id="name" name="name" type="date" class="form-control validate" data-large-mode="true"/>
+                                    <label for="shAcntDate">일자</label>
+                                    <input id="shAcntDate" name="shAcntDate" type="date" class="form-control validate" data-large-mode="true"/>
                                 </div>
                                 <div class="form-group col-lg-4">
-                                    <label for="address">항목</label>
-                                    <input id="address" name="address" type="text" class="form-control validate" />
+                                    <label for="shAcntItem">항목</label>
+                                    <input id="shAcntItem" name="shAcntItem" type="text" class="form-control validate" />
                                 </div>
                                 <div class="form-group col-lg-4">
-                                    <label for="password">금액</label>
-                                    <input id="password" name="password" type="number" class="form-control validate"/>
+                                    <label for="shAcntAmount">금액</label>
+                                    <input id="shAcntAmount" name="shAcntAmount" type="number" class="form-control validate"/>
                                 </div>
                                 <div class="ccol-lg-4">
                                     <label >　</label>
-                                    <button type="submit" class="btn btn-primary btn-block text-uppercase">
+                                    <button type="shAcntSubmit" class="btn btn-primary btn-block text-uppercase">
                                         검색하기
-                                </button>
+                                    </button>
                                 </div>
                             </form>
                             </div>
@@ -199,10 +199,10 @@
                     </div>
                 </div>
                 <!-- 목표 insert start -->
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+                <div class="col-12 tm-block-col">
                     <div class="tm-bg-primary-dark tm-block tm-block-settings">
                     <!-- <h2 class="tm-site-title mb-0">홍길동 자산관리사</h2> -->
-                    <form action="" class="tm-signup-form row">
+                    <form action="" class="tm-signup-form row tm-block-col">
                         <div class="form-group col-lg-3">
                             <label for="name">목표금액</label>
                             <input id="name" name="name" type="text" class="form-control validate" disabled="true"/>
@@ -230,17 +230,16 @@
                             </button>
                         </div>
                     </form>
-                    </div>
-                </div>
-                <!-- acnt insert end -->
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col ">
-                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll ">
                         <h2 class="tm-block-title">피드백 내역</h2>
                         <div id="place_for_feedbacklist"></div>
                         <div id="place_for_feedbacklistmatch"></div>
                         
                     </div>
+                    </div>
                 </div>
+                <!-- acnt insert end -->
+               
                 <!-- user(notmatched) table start -->
                 <div class="col-12 tm-block-col">
                     <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll" id="feedbackWrite">
@@ -249,43 +248,23 @@
                             <div class="tm-bg-primary-dark col-12">                    
                                 <form action="" class="tm-signup-form row">
                                     <div class="form-group col-6">
-                                        <label
-                                            for="name"
-                                            >유저이름
-                                        </label>
-                                        <input
-                                            id="name"
-                                            name="name"
-                                            type="text"
-                                            class="form-control validate"
-                                            required
-                                        />
+                                        <label for="putFbId"> 유저이름 </label>
+                                        <input id="putFbId" name="putFbId" type="text" class="form-control validate" required />
                                     </div>
                                     <div class="form-group col-6">
                                         <label>목표</label>
-                                        <input
-                                        id="stock"
-                                        name="stock"
-                                        type="text"
-                                        class="form-control validate"
-                                        required
-                                        />
+                                        <input id="putFbGoal" name="putFbGoal" type="text" class="form-control validate" required />
                                     </div>
                                     <div class="form-group col-12">
-                                        <label
-                                            for="description"
-                                            >피드백 내용</label
-                                        >
-                                        <textarea
-                                            class="form-control validate"
-                                            rows="3"
-                                            required
-                                        >
+                                        <label for="putFbText" > 피드백 내용 </label >
+                                        <textarea id="putFbText" class="form-control validate" rows="3" required >
                                         </textarea>
                                     </div>                            
                                     
                                     <div class="form-group col-3">
-                                        <button type="submit" class="btn btn-primary btn-block text-uppercase">피드백 등록</button>
+                                        <button type="putFbSubmit" class="btn btn-primary btn-block text-uppercase">
+                                            피드백 등록 
+                                        </button>
                                     </div>
                                 </form>
                             </div>
@@ -295,33 +274,30 @@
                 <!-- user(notmatched) table end -->  
                 <!-- acnt table start -->
                 <div class="col-12 tm-block-col">
-                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll" id="noMatchUserList">
                         <h2 class="tm-block-title">유저리스트</h2>   
                         <div class="col-12 ">
                             <div class="tm-bg-primary-dark col-12">                    
                             <form action="/deleteone" class="tm-signup-form row">
                                 <div class="form-group col-lg-2.5">
-                                    <label for="name">시작일자</label>
-                                    <input id="name" name="name" type="date" class="form-control validate" data-large-mode="true"/>
+                                    <label for="shNmuGsDate">시작일자</label>
+                                    <input id="shNmuGsDateame" name="shNmuGsDate" type="date" class="form-control validate" data-large-mode="true"/>
                                 </div>
                                 <div class="form-group col-lg-2">
-                                    <label for="address">기간</label>
-                                    <input id="address" name="address" type="text" class="form-control validate" />
+                                    <label for="shNmuGTerm">기간</label>
+                                    <input id="shNmuGTerm" name="shNmuGTerm" type="number" class="form-control validate" />
                                 </div>
                                 <div class="form-group col-lg-3">
-                                    <label for="password">최소입금액</label>
-                                    <input id="password" name="password" type="number" class="form-control validate"/>
+                                    <label for="shNmuMinGAmount">최소입금액</label>
+                                    <input id="shNmuMinGAmount" name="shNmuMinGAmount" type="number" class="form-control validate"/>
                                 </div>
                                 <div class="form-group col-lg-3">
-                                    <label for="password">최대입금액<picture>
-                                        <source media="(min-width: )" srcset="">
-                                        <img src="" alt="">
-                                    </picture></label>
-                                    <input id="password" name="password" type="number" class="form-control validate"/>
+                                    <label for="shNmuMaxGAmount">최대입금액</label>
+                                    <input id="shNmuMaxGAmount" name="shNmuMaxGAmount" type="number" class="form-control validate"/>
                                 </div>
                                 <div class="ccol-lg-4">
                                     <label >　</label>
-                                    <button type="submit" class="btn btn-primary btn-block text-uppercase">
+                                    <button type="shNmuSubmit" class="btn btn-primary btn-block text-uppercase">
                                         검색하기
                                 </button>
                                 </div>
@@ -334,30 +310,34 @@
                 <!-- acnt table end -->
                 <!-- acnt table start -->
                 <div class="col-12 tm-block-col">
-                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll" id="clientList">
                         <h2 class="tm-block-title">고객리스트</h2>
                         <div class="col-12 ">
                             <div class="tm-bg-primary-dark col-12">                    
-                            <form action="/deleteone" class="tm-signup-form row">
-                                <div class="form-group col-lg-3">
-                                    <label for="name">일자</label>
-                                    <input id="name" name="name" type="date" class="form-control validate" data-large-mode="true"/>
-                                </div>
-                                <div class="form-group col-lg-4">
-                                    <label for="address">항목</label>
-                                    <input id="address" name="address" type="text" class="form-control validate" />
-                                </div>
-                                <div class="form-group col-lg-3">
-                                    <label for="password">금액</label>
-                                    <input id="password" name="password" type="number" class="form-control validate"/>
-                                </div>
-                                <div class="ccol-lg-4">
-                                    <label >　</label>
-                                    <button type="submit" class="btn btn-primary btn-block text-uppercase">
-                                        검색하기
-                                </button>
-                                </div>
-                            </form>
+                                <form action="/deleteone" class="tm-signup-form row">
+                                    <div class="form-group col-lg-2">
+                                        <label for="shCtName">이름</label>
+                                        <input id="shCtName" name="shCtName" type="text" class="form-control validate" />
+                                    </div>
+                                    <div class="form-group col-lg-2.5">
+                                        <label for="shCtLastFbDate">최종 피드백 일자</label>
+                                        <input id="shCtLastFbDate" name="shCtLastFbDate" type="date" class="form-control validate" data-large-mode="true"/>
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <label for="shCtMinGAmount">최소입금액</label>
+                                        <input id="shCttMinGAmount" name="shCtMinGAmount" type="number" class="form-control validate"/>
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <label for="CtMaxGAmount">최대입금액</label>
+                                        <input id="shCtMaxGAmount" name="shCtMaxGAmount" type="number" class="form-control validate"/>
+                                    </div>
+                                    <div class="ccol-lg-4">
+                                        <label >　</label>
+                                        <button type="shCtSubmit" class="btn btn-primary btn-block text-uppercase">
+                                            검색하기
+                                    </button>
+                                    </div>
+                                </form>
                             </div>
                          </div>
                         <div id="place_for_clientstableplace"></div>
@@ -366,30 +346,34 @@
                 <!-- acnt table end -->
                 <!-- acnt table start -->
                 <div class="col-12 tm-block-col">
-                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll">
+                    <div class="tm-bg-primary-dark tm-block tm-block-taller tm-block-scroll" id="suggestList">
                         <h2 class="tm-block-title">제안리스트</h2>
                         <div class="col-12 ">
                             <div class="tm-bg-primary-dark col-12">                    
-                            <form action="/deleteone" class="tm-signup-form row">
-                                <div class="form-group col-lg-3">
-                                    <label for="name">일자</label>
-                                    <input id="name" name="name" type="date" class="form-control validate" data-large-mode="true"/>
-                                </div>
-                                <div class="form-group col-lg-4">
-                                    <label for="address">항목</label>
-                                    <input id="address" name="address" type="text" class="form-control validate" />
-                                </div>
-                                <div class="form-group col-lg-3">
-                                    <label for="password">금액</label>
-                                    <input id="password" name="password" type="number" class="form-control validate"/>
-                                </div>
-                                <div class="ccol-lg-4">
-                                    <label >　</label>
-                                    <button type="submit" class="btn btn-primary btn-block text-uppercase">
-                                        검색하기
-                                </button>
-                                </div>
-                            </form>
+                                <form action="/deleteone" class="tm-signup-form row">
+                                    <div class="form-group col-lg-2.5">
+                                        <label for="shSuggGsDate">시작일자</label>
+                                        <input id="shSuggGsDate" name="shSuggGsDate" type="date" class="form-control validate" data-large-mode="true"/>
+                                    </div>
+                                    <div class="form-group col-lg-2">
+                                        <label for="shSuggGTerm">기간</label>
+                                        <input id="shSuggGTerm" name="shSuggGTerm" type="number" class="form-control validate" />
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <label for="shSuggMinGAmount">최소입금액</label>
+                                        <input id="shSuggMinGAmount" name="shSuggMinGAmount" type="number" class="form-control validate"/>
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <label for="shSuggMaxGAmount">최대입금액</label>
+                                        <input id="shSuggMaxGAmount" name="shSuggMaxGAmount" type="number" class="form-control validate"/>
+                                    </div>
+                                    <div class="ccol-lg-4">
+                                        <label >　</label>
+                                        <button type="shSuggSubmit" class="btn btn-primary btn-block text-uppercase">
+                                            검색하기
+                                    </button>
+                                    </div>
+                                </form>
                             </div>
                          </div>
                         <div id="place_for_suggeststableplace"></div>
@@ -454,10 +438,13 @@
             let interval;
     
             function doAjax() {
+            var shAcntItem = $('input[name=shAcntItem]').val();
             $.ajax({
                 url: "http://localhost:3000/updatelist",
-                type: "get",
+                type: "POST",
                 success: function(response) {
+                console.log("shAcntItem : ", shAcntItem);
+                console.log("doajaxxxx");
                 $("#place_for_tableplace").html(response);
                 interval = setTimeout(doAjax, 3000);
                 },
@@ -467,14 +454,11 @@
             });
             }
             doAjax();
-            $("#start").on("click", function() {
-            console.log("start");
-            doAjax();
-            });
+            //
     
-            $("#stop").on("click", function() {
+            $(".shAcntSubmit").on("click", function() {
             console.log("stop");
-            clearTimeout(interval);
+            doAjax();
             });
         });
     </script>

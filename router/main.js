@@ -9,6 +9,7 @@ module.exports = function(app) {
       }));
      
       app.get('/',function(req,res){
+        let result
          res.render('index.html')
       });
       app.get('/login',function(req,res){
@@ -62,18 +63,17 @@ module.exports = function(app) {
       res.render("table");
     });
 
-   app.get("/updatelist", function(req, res) {
+   app.post("/updatelist", function(req, res) {
       // res.render("table.html");
       let resultList;
-  
       MongoClient.connect(
         "mongodb://localhost:27017",
         { useUnifiedTopology: true },
         async function(err, db) {
           if (err) throw err;
-          var dbo = db.db("test");
+          var dbo = db.db("mydb");          
           dbo
-            .collection("testtable")
+            .collection("accounthistory")
             .find({})
             .toArray(function(err, result) {
               resultList = result;
@@ -252,7 +252,7 @@ module.exports = function(app) {
         });
     }
   );
-});
+ });
 
    app.get("/deletelist", function(req, res) {
       // res.render("table.html");
@@ -274,22 +274,22 @@ module.exports = function(app) {
        );
    });
 
-   app.get("/deleteone", function(req, res) {
+   app.post("/deleteone", function(req, res) {
       // res.render("table.html");
       let resultList;
-  
+      console.log("adress : " , req.body.acntItem)
       MongoClient.connect(
          "mongodb://localhost:27017",
          { useUnifiedTopology: true },
          function(err, db) {
            if (err) throw err;
-           let address = req.body.address;
-           var dbo = db.db("test");
-           var myquery = { address: address };
-           console.log("deleteOne : yet 1 document deleted" + req.body.address);
+           let address = req.body.acntItem;
+           let dbo = db.db("test");
+           let myquery = { address: address };
+           console.log("deleteOne : yet 1 document deleted" + address);
            dbo.collection("testtable").deleteOne(myquery, function(err, obj) {
              if (err) throw err;
-             console.log("deleteOne : 1 document deleted" + req.body.address);
+             console.log("deleteOne : 1 document deleted" + address);
              db.close();
            });
          }
@@ -319,4 +319,56 @@ module.exports = function(app) {
        );
    });
    
+  app.post("/acntHistoryInput", function(req, res) {
+    // res.render("table.html");
+    let resultList;
+ 
+        // Insert data
+    MongoClient.connect(
+      "mongodb://localhost:27017",
+      { useUnifiedTopology: true },
+      function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("mydb");
+        let postPutAcntDate = req.body.putAcntDate;
+        let postPutAcntItem = req.body.putAcntItem;
+        let postPutAcntAmount = req.body.putAcntAmount;
+        let postPutAcntEtc = req.body.putAcntEtc;
+        let myobj = { acntid: "asdf", acntdate: postPutAcntDate, acntitem: postPutAcntItem , acntamount: postPutAcntAmount , acntetc: postPutAcntEtc };
+        dbo.collection("accounthistory").insertOne(myobj, function(err, res) {
+          if (err) throw err;
+          console.log("1 document inserted");
+          db.close();
+        });
+      }
+    );
+    res.render('index.html')
+  });
+
+  app.post("/matchReq", function(req, res) {
+    // res.render("table.html");
+    let resultList;
+ 
+    // updated
+    MongoClient.connect(
+      "mongodb://localhost:27017",
+      { useUnifiedTopology: true },
+      function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("test");
+        //req.body.putAcntAmount
+        var myquery = { gid: "asdf" };
+        var newvalues = { $set: { gsdate: req.body.putGsDate, gterm : req.body.putGTerm } };
+        dbo
+          .collection("goal")
+          .updateOne(myquery, newvalues, function(err, res) {
+            if (err) throw err;
+            console.log("1 document updated");
+            db.close();
+          });
+      }
+    );
+  });
+
+
 };
