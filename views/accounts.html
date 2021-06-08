@@ -87,19 +87,6 @@
 
     </nav>
       <div class="container mt-5">
-        <div class="row tm-content-row">
-          <div class="col-12 tm-block-col">
-            <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
-              <h2 class="tm-block-title">계정 권한</h2>
-              <p class="text-white">권한</p>
-              <select class="custom-select" disabled="true">
-                <option value="0">유저</option>
-                <option value="1">자산관리사</option>
-                <option value="2">운영자</option>
-              </select>
-            </div>
-          </div>
-        </div>
         <!-- row -->
         <div class="row tm-content-row">
           <div class="col-12 tm-block-col">
@@ -107,60 +94,52 @@
               <h2 class="tm-block-title">계정 정보</h2>
               <form action="" class="tm-signup-form row">
                 <div class="form-group col-lg-6">
-                  <label for="name">이름</label>
+                  <label for="acntEmail">아이디</label>
                   <input
-                    id="name"
-                    name="name"
+                    id="acntEmail"
+                    name="acntEmail"
+                    type="email"
+                    class="form-control validate"
+                    disabled="false"
+                  />
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="acntName">권한</label>
+                  <select id="acntName" class="custom-select" disabled="true">
+                    <option value="0">유저</option>
+                    <option value="1">자산관리사</option>
+                    <option value="2">운영자</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="acntPassword">비밀번호</label>
+                  <input
+                    id="acntPassword"
+                    name="acntPassword"
+                    type="password"
+                    class="form-control validate"
+                  />
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="acntName">이름</label>
+                  <input
+                    id="acntName"
+                    name="acntName"
                     type="text"
                     class="form-control validate"
                   />
-                </div>
+                </div>                
                 <div class="form-group col-lg-6">
-                  <label for="email">아이디</label>
+                  <label for="acntPassword2">비밀번호 확인</label>
                   <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    class="form-control validate"
-                    disabled="true"
-                  />
-                </div>
-                <div class="form-group col-lg-6">
-                  <label for="password">비밀번호</label>
-                  <input
-                    id="password"
-                    name="password"
+                    id="acntPassword2"
+                    name="acntPassword2"
                     type="password"
                     class="form-control validate"
                   />
-                </div>
-                <div class="form-group col-lg-6">
-                  <label for="password2">비밀번호 확인</label>
-                  <input
-                    id="password2"
-                    name="password2"
-                    type="password"
-                    class="form-control validate"
-                  />
-                </div>
-                <div class="form-group col-lg-6">
-                  <label for="phone">비밀번호 힌트</label>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    class="form-control validate"
-                  />
-                </div>
-                <div class="form-group col-lg-6">
-                  <label for="phone">비밀번호 힌트 답</label>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    class="form-control validate"
-                  />
-                </div>
+                </div> 
+                <div class="form-group col-lg-6" >
+                </div> 
                 <div class="form-group col-lg-6">
                   <button
                     type="submit"

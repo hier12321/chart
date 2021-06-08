@@ -87,7 +87,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <p class="text-white mt-5 mb-5">Welcome back, <b>Admin</b></p>
+                    <!-- <p class="text-white mt-5 mb-5">Welcome back, <b> userData_list.id </b></p> -->
                 </div>
             </div>
             <!-- row -->
@@ -157,7 +157,7 @@
                         <h2 class="tm-block-title">입출금 내역</h2>
                         <div class="col-12 ">
                             <div class="tm-bg-primary-dark col-12">                    
-                            <form action="" class="tm-signup-form row" method="">
+                            <form action="/updatelist" class="tm-signup-form row" method="POST">
                                 <div class="form-group col-lg-3.5">
                                     <label for="shAcntDate">일자</label>
                                     <input id="shAcntDate" name="shAcntDate" type="date" class="form-control validate" data-large-mode="true"/>
@@ -172,7 +172,7 @@
                                 </div>
                                 <div class="ccol-lg-4">
                                     <label >　</label>
-                                    <button type="shAcntSubmit" class="btn btn-primary btn-block text-uppercase">
+                                    <button id="shAcntSubmit" name="shAcntSubmit" type="submit" class="btn btn-primary btn-block text-uppercase">
                                         검색하기
                                     </button>
                                 </div>
@@ -436,7 +436,7 @@
     <script>
         $(document).ready(function() {
             let interval;
-    
+
             function doAjax() {
             var shAcntItem = $('input[name=shAcntItem]').val();
             $.ajax({
@@ -455,9 +455,24 @@
             }
             doAjax();
             //
+
+            function checkUserData(){
+                if(userData_list){
+                alert("here.eee");
+                alert(userData_list.id);
+                // if (userData_list.macthid){  //매칭된 관리사가 있으면 
+                    $("#place_for_feedbacklistmatch").css("display","none"); // 전체리스트 보여주지 않음 공간 차지하지 않음
+                // }else{ //매칭된 관리사가 없으면 
+                //    $("#place_for_feedbacklist").css("display","none"); // 전담피드백 보여주지 않음 공간 차지하지 않음
+                // }
+            }else{
+                alert("hereee??")
+            };
+            }
+            checkUserData();
     
             $(".shAcntSubmit").on("click", function() {
-            console.log("stop");
+            console.log("stopppp");
             doAjax();
             });
         });
@@ -622,13 +637,9 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function() { 
+            
              
-            // if (privacy.matcher){  //매칭된 관리사가 있으면 
-                $("#place_for_feedbacklist").css("display","none"); // 전체리스트 보여주지 않음 공간 차지하지 않음
-            // }else{ //매칭된 관리사가 없으면 
-               // $("#place_for_feedbacklistmatch").css("display","none"); // 전담피드백 보여주지 않음 공간 차지하지 않음
-            // }
         });
     </script>
 </body>

@@ -1,7 +1,7 @@
 let express = require('express');
 let app = express();
 let router = require('./router/main')(app);
-let database = require("./database/config");
+//let database = require("./database/config"); 
 let port = process.env.PORT || 3000;
 
 app.set('views', __dirname + '/views');
